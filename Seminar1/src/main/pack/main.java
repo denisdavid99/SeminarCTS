@@ -1,10 +1,27 @@
 package main.pack;
 
+import classes.pack.*;
+
 public class main {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
+		Zookeeper keeper = new Zookeeper("Dani");
+		
+		Girafa g1 = new Girafa("Girafa",45,4);
+		Girafa g2 = new Girafa("Girafa2",41,3);
+		Zebra z1 = new Zebra("Zebra", 43, 1);
+		Zebra z2 = new Zebra("Zebra", 49, 1);
+		
+		Zoo zoo = new Zoo();
+		zoo.setZookeeper(keeper);
+		zoo.addAnimal(g1);
+		zoo.addAnimal(g2);
+		zoo.addAnimal(z1);
+		zoo.addAnimal(z2);
+		
+		
+		zoo.feedAllAnimals();
 
 	}
-
 }
