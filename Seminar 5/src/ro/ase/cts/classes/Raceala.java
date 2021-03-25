@@ -1,5 +1,7 @@
 package ro.ase.cts.classes;
 
-public abstract class Raceala {
-
+public class Raceala extends Categorie {
+	public Raceala(float pretDeBaza) {
+		super(pretDeBaza);
+	}
 }
