@@ -4,7 +4,7 @@ public class ContBancar {
 	private String detinator;
 	private float suma;
 	
-	public ContBancar(String detinator, float suma) {
+	public ContBancar(String detinator) {
 		super();
 		this.detinator = detinator;
 		this.suma = 0;
