@@ -1,7 +1,7 @@
-package ro.acs.cts.facde.main;
+package ro.acs.cts.facade.main;
 
-import ro.acs.cts.facde.classes.FacadeInternare;
-import ro.acs.cts.facde.classes.Pacient;
+import ro.acs.cts.facade.classes.FacadeInternare;
+import ro.acs.cts.facade.classes.Pacient;
 
 public class Main {
 

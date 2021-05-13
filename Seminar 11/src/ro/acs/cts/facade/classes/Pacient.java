@@ -1,4 +1,4 @@
-package ro.acs.cts.facde.classes;
+package ro.acs.cts.facade.classes;
 
 public class Pacient {
 	private String nume;
