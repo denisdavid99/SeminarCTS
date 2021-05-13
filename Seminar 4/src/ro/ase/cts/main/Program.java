@@ -4,6 +4,7 @@ import ro.ase.cts.classes.ClinicaVeterinara;
 import ro.ase.cts.classes.ClinicaVeterinaraLazy;
 import ro.ase.cts.threadsafe.Logodna;
 
+
 public class Program {
 
 	public static void main(String[] args) {
