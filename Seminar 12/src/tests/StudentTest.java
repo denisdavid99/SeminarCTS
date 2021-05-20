@@ -1,35 +1,144 @@
+Skip to content
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@denisdavid99 
+tucamadalin99
+/
+CTS-Seminar
+1
+00
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+CTS-Seminar/Seminar12_CTS/src/tests/StudentTests.java /
+@tucamadalin99
+tucamadalin99 Second commit
+Latest commit 82d2daf 6 minutes ago
+ History
+ 1 contributor
+114 lines (91 sloc)  2.22 KB
+  
 package tests;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 
-import classes.Student;
+import clase.Student;
 
-class StudentTest {
+public class StudentTests {
 
+	@Before
+	public void setUp() throws Exception {
+	}
 
-	@Test
-	void test() {
-		String nume="Ion";
-		Student student=new Student(nume);
-		assertEquals(nume,student.getNume());
+	@After
+	public void tearDown() throws Exception {
 	}
 
 	@Test
-	public void testListAddNote() {
-	Student student=new Student();
-	int nota=8;
-	student.adaugaNota(8);
-	assertEquals(nota,getNota(0));
-}
+	public void testConstructorRightName() {
+		String nume="Ion";
+		Student student = new Student(nume);
+		assertEquals(nume, student.getNume());
+	}
+	
+	@Test
+	public void testListAddNotaCorect() {
+		Student student = new Student();
+		int nota = 8;
+		student.adaugaNota(nota);
+		assertEquals(nota, student.getNota(0));
+	}
 	
 	@Test
 	public void testListSize() {
-		Student student=new Student();
-		int nota=8;
+		Student student = new Student();
+		int nota = 8;
 		student.adaugaNota(nota);
-		assertEquals(1,student.getNote().size());
+		assertEquals(1, student.getNote().size());
 	}
+	
+	@Test
+	public void testCalculateMedieNota() {
+		Student student = new Student();
+		int nota = 8;
+		student.adaugaNota(nota);
+		assertEquals(nota, student.calculeazaMedie(), 0.01);
+	}
+	
+	@Test
+	public void testCalculateMedieNote() {
+		Student student = new Student();
+		int nota1 = 8;
+		int nota2 = 8;
+		int nota3 = 7;
+		
+		float medie = (nota1+nota2+nota3)/3.0f;
+		
+		student.adaugaNota(nota1);
+		student.adaugaNota(nota2);
+		student.adaugaNota(nota3);
+		assertEquals(medie, student.calculeazaMedie(), 0.01);
+		
+	}
+	
+	@Test
+	public void testCalculateMedieEmpty() {
+		Student student = new Student();
+		assertEquals(0, student.calculeazaMedie(),0.01);
+	}
+	
+	@Test(expected=IndexOutOfBoundsException.class)
+	public void testGetNota() {
+		Student student = new Student();
+		int nota = 8;
+		student.adaugaNota(nota);
+		assertEquals(nota, student.getNota(-1));
+	}
+	
+	@Test
+	public void testCalculateMedieJU3() {
+		Student student = new Student();
+		int nota = 8;
+		try {
+			int x = student.getNota(-1);
+			fail("Test Case JU3 failed");
+		}catch(IndexOutOfBoundsException err) {
+			
+		}
+	}
+	
+	@Test
+	public void testVerificaRestanteTrue() {
+		Student student = new Student();
+		student.adaugaNota(8);
+		student.adaugaNota(6);
+		student.adaugaNota(7);
+		
+		assertTrue(student.areRestante());
+	}
+	
+	@Test
+	public void testVerificaRestanteFalse() {
+		Student student = new Student();
+		student.adaugaNota(8);
+		student.adaugaNota(4);
+		student.adaugaNota(7);
+		
+		assertFalse(student.areRestante());
+	}
+
+}
