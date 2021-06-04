@@ -1,33 +1,3 @@
-Skip to content
-Search or jump to…
-
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@denisdavid99 
-tucamadalin99
-/
-CTS-Seminar
-1
-00
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-CTS-Seminar/Seminar12_CTS/src/tests/StudentTests.java /
-@tucamadalin99
-tucamadalin99 Second commit
-Latest commit 82d2daf 6 minutes ago
- History
- 1 contributor
-114 lines (91 sloc)  2.22 KB
-  
 package tests;
 
 import static org.junit.Assert.*;
